@@ -42,7 +42,7 @@ final class ActionListViewController: UIViewController {
         super.viewWillAppear(true)
          
         UIView.animate(withDuration: 0.3) {
-            self.view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+            self.view.backgroundColor = UIColor.black.withAlphaComponent(0.24)
         }
     }
 }
@@ -52,6 +52,7 @@ final class ActionListViewController: UIViewController {
 private extension ActionListViewController {
     
     func configure() {
+        tableView.register(R.nib.actionListCell)
         menuView.corners = [.topLeft, .topRight]
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGesture))
         tapView.addGestureRecognizer(tapGestureRecognizer)
@@ -81,10 +82,12 @@ extension ActionListViewController: UITableViewDelegate {
 extension ActionListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        
+        let actionCell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.actionListCell, for: indexPath)!
+        return actionCell
     }
 }
