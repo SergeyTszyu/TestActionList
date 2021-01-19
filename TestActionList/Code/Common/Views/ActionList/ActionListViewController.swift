@@ -9,6 +9,8 @@ import UIKit
 
 fileprivate struct Constans {
     static let cellHeight: CGFloat = 48.0
+    static let topSpacing: CGFloat = 8.0       // Отступ сверху
+    static let bottomSpacing: CGFloat = 48.0   // Отступ снизу
 }
 
 protocol ActionListViewControllerDelegate: class {
@@ -20,6 +22,7 @@ final class ActionListViewController: UIViewController {
     
     // MARK: - @IBOutlets
     
+    @IBOutlet private weak var tapView: UIView!
     @IBOutlet private weak var menuView: CornerView!
     @IBOutlet private weak var tableView: UITableView!
     
@@ -50,6 +53,8 @@ private extension ActionListViewController {
     
     func configure() {
         menuView.corners = [.topLeft, .topRight]
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGesture))
+        tapView.addGestureRecognizer(tapGestureRecognizer)
     }
     
     @objc func tapGesture(_ recognzier: UITapGestureRecognizer) {
@@ -66,7 +71,7 @@ extension ActionListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let item = 
+        let item =
         dismissAction()
     }
 }

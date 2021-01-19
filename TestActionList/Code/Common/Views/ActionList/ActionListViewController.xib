@@ -10,6 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ActionListViewController" customModule="TestActionList" customModuleProvider="target">
             <connections>
+                <outlet property="menuView" destination="MR9-i1-J5N" id="jJ0-cy-M3k"/>
+                <outlet property="tableView" destination="4co-4Q-dQ7" id="E4l-RG-ud3"/>
+                <outlet property="tapView" destination="iJ0-YV-Umy" id="miE-Om-BAV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,12 +21,30 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MR9-i1-J5N">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MR9-i1-J5N" customClass="CornerView" customModule="TestActionList" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="648" width="414" height="248"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4co-4Q-dQ7">
+                            <rect key="frame" x="0.0" y="8" width="414" height="240"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="ho0-QL-sct"/>
+                                <outlet property="delegate" destination="-1" id="mfN-T6-cKp"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
+                        <constraint firstItem="4co-4Q-dQ7" firstAttribute="top" secondItem="MR9-i1-J5N" secondAttribute="top" constant="8" id="H1J-0K-h7U"/>
                         <constraint firstAttribute="height" constant="248" id="OsN-0S-EUS"/>
+                        <constraint firstAttribute="trailing" secondItem="4co-4Q-dQ7" secondAttribute="trailing" id="VHs-RF-YC8"/>
+                        <constraint firstItem="4co-4Q-dQ7" firstAttribute="leading" secondItem="MR9-i1-J5N" secondAttribute="leading" id="d4M-cz-e6V"/>
+                        <constraint firstAttribute="bottom" secondItem="4co-4Q-dQ7" secondAttribute="bottom" id="jTX-6L-RUJ"/>
                     </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJ0-YV-Umy">
+                    <rect key="frame" x="0.0" y="44" width="414" height="604"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -31,7 +52,11 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MR9-i1-J5N" secondAttribute="trailing" id="0WS-Ry-8La"/>
                 <constraint firstAttribute="bottom" secondItem="MR9-i1-J5N" secondAttribute="bottom" id="0Z3-6m-fjI"/>
+                <constraint firstItem="iJ0-YV-Umy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9Rw-2Y-VYU"/>
+                <constraint firstItem="MR9-i1-J5N" firstAttribute="top" secondItem="iJ0-YV-Umy" secondAttribute="bottom" id="Qbh-Oc-pso"/>
                 <constraint firstItem="MR9-i1-J5N" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="crg-iY-KgB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iJ0-YV-Umy" secondAttribute="trailing" id="ldN-jk-Vzd"/>
+                <constraint firstItem="iJ0-YV-Umy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="oax-W1-jbS"/>
             </constraints>
             <point key="canvasLocation" x="18.840579710144929" y="108.48214285714285"/>
         </view>

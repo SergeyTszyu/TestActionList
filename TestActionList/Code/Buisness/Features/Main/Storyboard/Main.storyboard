@@ -35,6 +35,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMG-0s-ZGm">
                                 <rect key="frame" x="150" y="433" width="114" height="30"/>
                                 <state key="normal" title="Show Action List"/>
+                                <connections>
+                                    <action selector="showActionList:" destination="X1T-fO-sWj" eventType="touchUpInside" id="HCO-5t-re6"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UeD-WK-hJr"/>

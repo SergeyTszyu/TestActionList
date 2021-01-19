@@ -9,7 +9,7 @@ import UIKit
 
 protocol ActionListItem {
     var titleItem: String { get }
-    var image: String { get }
+    var image: UIImage { get }
 }
 
 final class ActionListCell: UITableViewCell {
@@ -27,6 +27,9 @@ final class ActionListCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        
+        actionNameLabel.text = nil
+        actionImageView.isHidden = true
     }
 }
 
@@ -35,6 +38,7 @@ final class ActionListCell: UITableViewCell {
 extension ActionListCell {
     
     func fill(_ item: ActionListItem) {
-        
+        actionNameLabel.text = item.titleItem
+        actionImageView.image = item.image
     }
 }
