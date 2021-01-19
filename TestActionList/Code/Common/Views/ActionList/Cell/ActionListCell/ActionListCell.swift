@@ -7,17 +7,34 @@
 
 import UIKit
 
-class ActionListCell: UITableViewCell {
+protocol ActionListItem {
+    var titleItem: String { get }
+    var image: String { get }
+}
 
+final class ActionListCell: UITableViewCell {
+    
+    // MARK: - @IBOutlets
+    
+    @IBOutlet private weak var actionImageView: UIImageView!
+    @IBOutlet private weak var actionNameLabel: UILabel!
+    
+    // MARK: - Life cycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
+}
+
+// MARK: - Public
+
+extension ActionListCell {
+    
+    func fill(_ item: ActionListItem) {
+        
+    }
 }
