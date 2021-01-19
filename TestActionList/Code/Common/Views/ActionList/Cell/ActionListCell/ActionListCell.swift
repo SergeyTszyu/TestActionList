@@ -7,9 +7,10 @@
 
 import UIKit
 
-protocol ActionListItem {
-    var titleItem: String { get }
-    var image: UIImage { get }
+struct Action: ActionListItem {
+    var titleItem: String
+    var image: UIImage
+    var color: UIColor
 }
 
 final class ActionListCell: UITableViewCell {
@@ -40,5 +41,6 @@ extension ActionListCell {
     func fill(_ item: ActionListItem) {
         actionNameLabel.text = item.titleItem
         actionImageView.image = item.image
+        actionImageView.tintColor = item.color
     }
 }

@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ActionListViewController" customModule="TestActionList" customModuleProvider="target">
             <connections>
                 <outlet property="menuView" destination="MR9-i1-J5N" id="jJ0-cy-M3k"/>
+                <outlet property="menuViewHeight" destination="rbg-rl-aLO" id="M1M-NS-JeC"/>
                 <outlet property="tableView" destination="4co-4Q-dQ7" id="E4l-RG-ud3"/>
                 <outlet property="tapView" destination="iJ0-YV-Umy" id="miE-Om-BAV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -41,6 +42,7 @@
                         <constraint firstAttribute="trailing" secondItem="4co-4Q-dQ7" secondAttribute="trailing" id="VHs-RF-YC8"/>
                         <constraint firstItem="4co-4Q-dQ7" firstAttribute="leading" secondItem="MR9-i1-J5N" secondAttribute="leading" id="d4M-cz-e6V"/>
                         <constraint firstAttribute="bottom" secondItem="4co-4Q-dQ7" secondAttribute="bottom" id="jTX-6L-RUJ"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="248" id="rbg-rl-aLO"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJ0-YV-Umy">

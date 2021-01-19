@@ -23,6 +23,8 @@
 		BB02982625B754F6005FF35B /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02982525B754F6005FF35B /* UIViewController+Extensions.swift */; };
 		BB02982E25B76022005FF35B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB02982D25B76022005FF35B /* Main.storyboard */; };
 		BB02984C25B77D7A005FF35B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02984B25B77D7A005FF35B /* R.generated.swift */; };
+		BB02985125B78FE0005FF35B /* ActionListCellObjectsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02985025B78FE0005FF35B /* ActionListCellObjectsFactory.swift */; };
+		BB02985725B7953A005FF35B /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02985625B7953A005FF35B /* UIColor+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		BB02982525B754F6005FF35B /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		BB02982D25B76022005FF35B /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BB02984B25B77D7A005FF35B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		BB02985025B78FE0005FF35B /* ActionListCellObjectsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionListCellObjectsFactory.swift; sourceTree = "<group>"; };
+		BB02985625B7953A005FF35B /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		D75E12F8FCA742D84E16B668 /* Pods-TestActionList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestActionList.debug.xcconfig"; path = "Target Support Files/Pods-TestActionList/Pods-TestActionList.debug.xcconfig"; sourceTree = "<group>"; };
 		E48B64E4F1596B3EB6E6C516 /* Pods-TestActionList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestActionList.release.xcconfig"; path = "Target Support Files/Pods-TestActionList/Pods-TestActionList.release.xcconfig"; sourceTree = "<group>"; };
 		E5F646F8FD1F51C9ED039BF8 /* Pods_TestActionList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestActionList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -263,6 +267,7 @@
 				BB02981025B75194005FF35B /* Cell */,
 				BB02980625B7518E005FF35B /* ActionListViewController.swift */,
 				BB02980725B7518E005FF35B /* ActionListViewController.xib */,
+				BB02985025B78FE0005FF35B /* ActionListCellObjectsFactory.swift */,
 			);
 			path = ActionList;
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 		BB02981D25B75466005FF35B /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				BB02985525B7952D005FF35B /* UIColor */,
 				BB02982425B754DC005FF35B /* UIViewController */,
 				BB02981E25B7546B005FF35B /* UIView */,
 			);
@@ -315,6 +321,14 @@
 				BB02982525B754F6005FF35B /* UIViewController+Extensions.swift */,
 			);
 			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		BB02985525B7952D005FF35B /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				BB02985625B7953A005FF35B /* UIColor+Extensions.swift */,
+			);
+			path = UIColor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -515,10 +529,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB0297BA25B6F964005FF35B /* AppDelegate.swift in Sources */,
+				BB02985725B7953A005FF35B /* UIColor+Extensions.swift in Sources */,
 				BB02982025B75474005FF35B /* UIView+Transformations.swift in Sources */,
 				BB02980825B7518E005FF35B /* ActionListViewController.swift in Sources */,
 				BB02984C25B77D7A005FF35B /* R.generated.swift in Sources */,
 				BB02982625B754F6005FF35B /* UIViewController+Extensions.swift in Sources */,
+				BB02985125B78FE0005FF35B /* ActionListCellObjectsFactory.swift in Sources */,
 				BB0297BC25B6F964005FF35B /* SceneDelegate.swift in Sources */,
 				BB0297FC25B750A3005FF35B /* MainViewController.swift in Sources */,
 				BB02981425B751AF005FF35B /* ActionListCell.swift in Sources */,

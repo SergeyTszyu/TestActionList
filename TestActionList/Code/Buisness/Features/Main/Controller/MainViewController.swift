@@ -11,7 +11,17 @@ final class MainViewController: UIViewController {
     
     // MARK: - @IBOutlets
     
+    @IBOutlet private weak var selectedItemLabel: UILabel!
+    
     // MARK: - Properties
+    
+    fileprivate lazy var actionList: ActionListViewController = {
+        let actionController = ActionListViewController()
+        actionController.modalPresentationStyle = .overFullScreen
+        actionController.modalTransitionStyle = .crossDissolve
+        actionController.delegate = self
+        return actionController
+    }()
     
     // MARK: - Life cycle
     
@@ -31,10 +41,7 @@ private extension MainViewController {
     }
     
     @IBAction func showActionList(_ sender: UIButton) {
-        let actionController = ActionListViewController()
-        actionController.modalPresentationStyle = .overFullScreen
-        actionController.modalTransitionStyle = .crossDissolve
-        present(actionController, animated: true, completion: nil)
+        present(actionList, animated: true, completion: nil)
     }
 }
 
@@ -45,6 +52,6 @@ extension MainViewController: ActionListViewControllerDelegate {
     func osagoQuestionnaireInputViewController(_ controller: ActionListViewController,
                                                selectItem item: ActionListItem) {
         
-        print("selected item: \(item.titleItem)")
+        selectedItemLabel.text = item.titleItem
     }
 }

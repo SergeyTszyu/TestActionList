@@ -131,6 +131,57 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.image` struct is generated, and contains static references to 5 images.
+  struct image {
+    /// Image `checkn`.
+    static let checkn = Rswift.ImageResource(bundle: R.hostingBundle, name: "checkn")
+    /// Image `delete`.
+    static let delete = Rswift.ImageResource(bundle: R.hostingBundle, name: "delete")
+    /// Image `edit`.
+    static let edit = Rswift.ImageResource(bundle: R.hostingBundle, name: "edit")
+    /// Image `notes`.
+    static let notes = Rswift.ImageResource(bundle: R.hostingBundle, name: "notes")
+    /// Image `paymentopt`.
+    static let paymentopt = Rswift.ImageResource(bundle: R.hostingBundle, name: "paymentopt")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "checkn", bundle: ..., traitCollection: ...)`
+    static func checkn(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.checkn, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "delete", bundle: ..., traitCollection: ...)`
+    static func delete(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.delete, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "edit", bundle: ..., traitCollection: ...)`
+    static func edit(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.edit, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "notes", bundle: ..., traitCollection: ...)`
+    static func notes(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.notes, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "paymentopt", bundle: ..., traitCollection: ...)`
+    static func paymentopt(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.paymentopt, compatibleWith: traitCollection)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
   /// This `R.info` struct is generated, and contains static references to 1 properties.
   struct info {
     struct uiApplicationSceneManifest {

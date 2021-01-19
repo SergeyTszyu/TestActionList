@@ -26,9 +26,18 @@ final class ActionListViewController: UIViewController {
     @IBOutlet private weak var menuView: CornerView!
     @IBOutlet private weak var tableView: UITableView!
     
+    @IBOutlet private weak var menuViewHeight: NSLayoutConstraint!
+    
     // MARK: - Properties
     
     weak var delegate: ActionListViewControllerDelegate?
+    
+    fileprivate var cellObjects: [ActionListItem] {
+        let factory = ActionListCellObjectsFactory()
+        let objects = factory.cellObjects(.all)
+        menuViewHeight.constant = (Constans.cellHeight * CGFloat(objects.count)) + Constans.topSpacing
+        return objects
+    }
     
     // MARK: - Life cycle
 
@@ -72,7 +81,8 @@ extension ActionListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let item =
+        let item = cellObjects[indexPath.row]
+        delegate?.osagoQuestionnaireInputViewController(self, selectItem: item)
         dismissAction()
     }
 }
@@ -82,12 +92,15 @@ extension ActionListViewController: UITableViewDelegate {
 extension ActionListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return cellObjects.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let item = cellObjects[indexPath.row]
         let actionCell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.actionListCell, for: indexPath)!
+        actionCell.fill(item)
+        
         return actionCell
     }
 }
