@@ -41,6 +41,7 @@ extension ActionListCell {
     
     func fill(_ item: ActionListItem) {
         actionNameLabel.text = item.titleItem
+        actionNameLabel.textColor = .primary
         actionImageView.image = item.image
         actionImageView.tintColor = item.color
     }
