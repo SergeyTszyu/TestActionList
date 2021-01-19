@@ -33,10 +33,12 @@ final class ActionListViewController: UIViewController {
     
     fileprivate var cellObjects: [ActionListItem] {
         let factory = ActionListCellObjectsFactory()
-        let objects = factory.cellObjects(.all)
+        let objects = factory.cellObjects(actionListType)
         tableViewHeight.constant = (Constans.cellHeight * CGFloat(objects.count))
         return objects
     }
+    
+    var actionListType: ActionListType = .all
     
     // MARK: - Life cycle
 

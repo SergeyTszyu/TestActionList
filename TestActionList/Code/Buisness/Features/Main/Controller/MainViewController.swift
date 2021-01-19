@@ -19,6 +19,7 @@ final class MainViewController: UIViewController {
         let actionController = ActionListViewController()
         actionController.modalPresentationStyle = .overFullScreen
         actionController.modalTransitionStyle = .crossDissolve
+        actionController.actionListType = .all
         actionController.delegate = self
         return actionController
     }()
