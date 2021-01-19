@@ -8,9 +8,10 @@
 import UIKit
 
 fileprivate struct Constans {
+    static let alpha: CGFloat = 0.24
     static let cellHeight: CGFloat = 48.0
-    static let topSpacing: CGFloat = 8.0       // Отступ сверху
-    static let bottomSpacing: CGFloat = 48.0   // Отступ снизу
+    static let topSpacing: CGFloat = 8.0
+    static let bottomSpacing: CGFloat = 48.0
 }
 
 protocol ActionListViewControllerDelegate: class {
@@ -49,9 +50,9 @@ final class ActionListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-         
+        
         UIView.animate(withDuration: 0.3) {
-            self.view.backgroundColor = UIColor.black.withAlphaComponent(0.24)
+            self.view.backgroundColor = UIColor.black.withAlphaComponent(Constans.alpha)
         }
     }
 }

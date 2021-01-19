@@ -8,9 +8,9 @@
 import UIKit
 
 protocol ActionListItem {
-    var titleItem: String { get }
-    var image: UIImage { get }
-    var color: UIColor { get }
+    var titleItem: String   { get }
+    var image: UIImage      { get }
+    var color: UIColor      { get }
 }
 
 enum ActionListType: Int {
