@@ -28,17 +28,12 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configure()
     }
 }
 
 // MARK: - Private
 
 private extension MainViewController {
-    
-    func configure() {
-        
-    }
     
     @IBAction func showActionList(_ sender: UIButton) {
         present(actionList, animated: true, completion: nil)

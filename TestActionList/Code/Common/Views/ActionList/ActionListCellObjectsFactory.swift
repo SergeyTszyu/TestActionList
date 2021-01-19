@@ -37,7 +37,6 @@ final class ActionListCellObjectsFactory {
         case .all:
             return [edit, markUncomplete, markUnpaid, editViewNotes, delete]
         }
-        
     }
     
 }

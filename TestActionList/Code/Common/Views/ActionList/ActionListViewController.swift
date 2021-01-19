@@ -10,8 +10,6 @@ import UIKit
 fileprivate struct Constans {
     static let alpha: CGFloat = 0.24
     static let cellHeight: CGFloat = 48.0
-    static let topSpacing: CGFloat = 8.0
-    static let bottomSpacing: CGFloat = 48.0
 }
 
 protocol ActionListViewControllerDelegate: class {
@@ -27,7 +25,7 @@ final class ActionListViewController: UIViewController {
     @IBOutlet private weak var menuView: CornerView!
     @IBOutlet private weak var tableView: UITableView!
     
-    @IBOutlet private weak var menuViewHeight: NSLayoutConstraint!
+    @IBOutlet private weak var tableViewHeight: NSLayoutConstraint!
     
     // MARK: - Properties
     
@@ -36,7 +34,7 @@ final class ActionListViewController: UIViewController {
     fileprivate var cellObjects: [ActionListItem] {
         let factory = ActionListCellObjectsFactory()
         let objects = factory.cellObjects(.all)
-        menuViewHeight.constant = (Constans.cellHeight * CGFloat(objects.count)) + Constans.topSpacing
+        tableViewHeight.constant = (Constans.cellHeight * CGFloat(objects.count))
         return objects
     }
     

@@ -31,6 +31,7 @@ final class ActionListCell: UITableViewCell {
         
         actionNameLabel.text = nil
         actionImageView.isHidden = true
+        actionImageView.tintColor = .clear
     }
 }
 
