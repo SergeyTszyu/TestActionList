@@ -45,7 +45,7 @@ private extension MainViewController {
 
 extension MainViewController: ActionListViewControllerDelegate {
     
-    func osagoQuestionnaireInputViewController(_ controller: ActionListViewController,
+    func actionListViewController(_ controller: ActionListViewController,
                                                selectItem item: ActionListItem) {
         
         selectedItemLabel.text = item.titleItem

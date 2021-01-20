@@ -13,7 +13,7 @@ fileprivate struct Constans {
 }
 
 protocol ActionListViewControllerDelegate: class {
-    func osagoQuestionnaireInputViewController(_ controller: ActionListViewController,
+    func actionListViewController(_ controller: ActionListViewController,
                                                selectItem item: ActionListItem)
 }
 
@@ -83,7 +83,7 @@ extension ActionListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = cellObjects[indexPath.row]
-        delegate?.osagoQuestionnaireInputViewController(self, selectItem: item)
+        delegate?.actionListViewController(self, selectItem: item)
         dismissAction()
     }
 }
